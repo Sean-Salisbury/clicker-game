@@ -1,0 +1,465 @@
+html {
+    height: 100%;
+    width: 100%;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  /* Layout of main web page */
+  
+  .container {
+    display: flex;
+  }
+  
+  .textbox {
+    flex: 1;
+    /* border: 2px solid black; */
+    /* this is to add a border to the 3 columns to make it easier to fix formatting*/
+  }
+  
+  /* Add styles to the form container */
+  
+  .form-container {
+    max-width: auto;
+    max-height: auto;
+    padding: 10px;
+    background-color: grey;
+  }
+  
+  #textboxRight {
+    text-align: left;
+    margin-right: 10%;
+    margin-top: 3%;
+    max-width: 19%;
+  }
+  
+  #textboxLeft {
+    text-align: center;
+    margin-left: 1%;
+    margin-top: 3%;
+    max-width: 30%;
+  }
+  
+  /*2560 + */
+  
+  #textboxCentreSmall {
+    text-align: right;
+    margin-top: 5.53%;
+    margin-left: 20%;
+    max-width: 1%;
+    margin-right: 0.1%;
+  
+    /* 1080p to 2560*/
+    @media (min-width: 1920px) and (max-width: 2560px) {
+      margin-top: 5.25%;
+    }
+  }
+  
+  #textboxCentre {
+    text-align: center;
+    margin-top: 3%;
+    margin-left: 1%;
+    max-width: 30%;
+    margin-right: 0.1%;
+  }
+  
+  
+  /* layout of upgrade path form */
+  
+  .containerUpgradeForm {
+    display: flex;
+  }
+  
+  .textboxUpgradeForm {
+    flex: 1;
+    /* border: 2px solid black; */
+    /* this is to add a border to the 3 columns to make it easier to fix formatting*/
+  }
+  
+  #textboxRightUpgradeForm {
+    text-align: left;
+    max-width: 10%;
+  }
+  
+  #textboxLeftUpgradeForm {
+    margin-left: 34%;
+    text-align: right;
+    max-width: 10%;
+  }
+  
+  #textboxCentreUpgradeForm {
+    text-align: center;
+    max-width: 10%;
+  }
+  
+  
+  /* Tool Tip Formatting */
+  
+  
+  .upgradeButton::before {
+    background-color: white;
+    border: 2px solid #888;
+    border-radius: 2px;
+    color: #444;
+    content: attr(data-title);
+    display: none;
+    font-family: sans-serif;
+    font-size: 100%;
+    padding: 1% 2%;
+    position: absolute;
+    inline-size: 1000%;
+    overflow-wrap: break-word;
+    bottom: 7%;
+    left: 130%;
+    z-index: 1;
+  
+  }
+  
+  
+  .upgradeButton:hover::before {
+    display: block;
+  }
+  
+  
+  .buyButton::before {
+    background-color: white;
+    border: 2px solid #888;
+    border-radius: 2px;
+    color: #444;
+    content: attr(data-title);
+    display: none;
+    font-family: sans-serif;
+    font-size: 60%;
+    padding: 0.5% 1%;
+    position: absolute;
+    white-space: break-spaces;
+    inline-size: 90%;
+    right: 110%;
+    z-index: 1;
+  }
+  
+  
+  .buyButton:hover::before {
+    display: block;
+  }
+  
+  /* Popup form formatting*/
+  
+  .upgradePathOpen {
+  
+    /* 2560 + */
+  
+    background-color: #4CAF50;
+    border: 2px solid black;
+    color: black;
+    padding: 123% 22%;
+    text-align: right;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 100%;
+  
+    /* 1080p to 2560*/
+    @media (min-width: 1920px) and (max-width: 2560px) {
+      font-size: 94%;
+      padding: 125% 24%;
+    }
+  
+    cursor: pointer;
+  }
+  
+  /* The popup form - hidden by default */
+  
+  .upgradePathForm {
+    display: none;
+    position: fixed;
+    top: 22%;
+    left: 41%;
+    border: 5px solid black;
+    max-height: auto;
+    max-width: auto;
+    z-index: 9;
+  }
+  
+  /* progress bar formatting */
+  
+  #reincarnateProgress {
+    width: 80%;
+    height: 25px;
+  
+    @media (min-width: 1920px) and (max-width: 2560px) {
+      width: 90%;
+      height: 30px;
+    }
+  
+    border-radius: 0%;
+    /* internet edge browsers colour change */
+    color: #22B98D;
+    background-color:lightgray;
+  }
+  
+  /* firefox browsers colour change */
+  
+  #reincarnateProgress::-moz-progress-bar {
+    background: #22B98D;
+  }
+  
+  #reincarnateProgress {
+    background-color: lightgray;
+  }
+  
+  /* chrome browsers colour change */
+  
+  #reincarnateProgress::-webkit-progress-value {
+    background: #22B98D;
+  }
+  
+  #reincarnateProgress::-webkit-progress-bar {
+    background-color: lightgray;
+  }
+  
+  .reincarnationFormOpen {
+  
+    background-color: #4CAF50;
+    border: 1px solid black;
+    color: black;
+    text-decoration: none;
+    padding: 2% 3%;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .reincarnationForm {
+  
+    display: none;
+    position: fixed;
+    top: 22%;
+    left: 41%;
+    border: 5px solid black;
+    max-height: 100%;
+    max-width: 100%;
+    z-index: 9;
+  }
+  
+  .reincarnateSure {
+    background-color: gold;
+    border: none;
+    color: black;
+    padding: 2% 4%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 100%;
+    cursor: pointer;
+  }
+  
+  #cancelReincarnate {
+    background-color: red;
+  }
+  
+  .reincarnateConfirm {
+    background-color: #4CAF50;
+    border: none;
+    color: black;
+    padding: 1% 2%;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 100%;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  #reincarnationTitle {
+    text-align: center;
+    position: relative;
+  }
+  
+  #reincarnationScreen {
+    width: 100%;
+    height: 50%;
+    text-align: center;
+  }
+  
+  /* div1 formatting */
+  
+  #div1 {
+    text-align: center;
+    margin-top: 97%;
+  }
+  
+  /* Click on button text formatting */
+  
+  .clickButton {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 30% 30%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  /* Upgrade buttons text formatting form container */
+  
+  .form-container .upgradeButton {
+  
+    background-color: #4CAF50;
+    border: none;
+    color: black;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    position: absolute;
+  }
+  
+  /* Upgrade buttons text formatting */
+  
+  .upgradeButton {
+  
+    background-color: #4CAF50;
+    border: 10px solid #4CAF50;
+    color: black;
+    text-decoration: none;
+    padding: 1.5% 2%;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .closeForm {
+    background-color: red;
+    border: none;
+    color: black;
+    padding: 2% 4%;
+    text-align: center;
+    margin-left: 43%;
+    position: relative;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 100%;
+    cursor: pointer;
+  }
+  
+  
+  
+  /* Buy buttons text formatting */
+  
+  .buyButton {
+    background-color: #4CAF50;
+    border: none;
+    color: black;
+    padding: 5% 15%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    inline-size: 110%;
+    font-size: 150%;
+    cursor: pointer;
+    white-space: nowrap;
+    position: relative;
+  }
+  
+  .buyMultiple {
+    background-color: #4CAF50;
+    border: none;
+    color: black;
+    padding: 1% 2%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 100%;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  
+  .ascensionBuyButton {
+    background-color: #4CAF50;
+    border: none;
+    color: black;
+    padding: 2% 2%;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 125%;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  /* Different Text formatting */
+  
+  #clickButtonText {
+    font-size: 300%;
+    color: black;
+  }
+  
+  #perSecondText {
+    font-size: 300%;
+    color: black;
+  }
+  
+  #dontHave {
+    font-size: 200%;
+    color: black;
+  }
+  
+  #dontHaveAscended {
+    font-size: 200%;
+    color: black;
+    text-align: center;
+    margin-top: 25%;
+    position: relative;
+  }
+  
+  #upgradeTitle {
+    font-size: 200%;
+    color: black;
+    text-align: center;
+  }
+  
+  /* Navigation bar */
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover:not(.active) {
+    background-color: #111;
+  }
+  
+  .active {
+    background-color: #3C86D0;
+  }
+  
+  .buttonsNavBar {
+    cursor: pointer;
+  }
+  
+  .settingsForm {
+  
+    display: none;
+    position: fixed;
+    top: 22%;
+    left: 20%;
+    border: 5px solid black;
+    max-height: 100%;
+    max-width: 100%;
+    z-index: 9;
+  }
